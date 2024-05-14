@@ -105,17 +105,6 @@ rm ~/.initia/config/genesis.json
 curl -Ls https://raw.githubusercontent.com/molla202/pokemon/main/genesis.json > $HOME/.initia/config/genesis.json
 
 ```
-
-### 🚧Seed
-```
-PEERS="093e1b89a498b6a8760ad2188fbda30a05e4f300@35.240.207.217:26656" && \
-SEEDS="2eaa272622d1ba6796100ab39f58c75d458b9dbc@34.142.181.82:26656,c28827cb96c14c905b127b92065a3fb4cd77d7f6@testnet-seeds.whispernode.com:25756" && \
-sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.initia/config/config.toml
-```
-### 🚧Gas pruning ayarı
-```
-...
-```
 ### 🚧Port Ayarları
 ```
 echo "export N_PORT="15"" >> $HOME/.bash_profile
@@ -138,6 +127,17 @@ s%:26656%:${N_PORT}656%g;
 s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${N_PORT}656\"%;
 s%:26660%:${N_PORT}660%g" $HOME/.initia/config/config.toml
 ```
+### 🚧Seed
+```
+PEERS="093e1b89a498b6a8760ad2188fbda30a05e4f300@35.240.207.217:26656" && \
+SEEDS="2eaa272622d1ba6796100ab39f58c75d458b9dbc@34.142.181.82:26656,c28827cb96c14c905b127b92065a3fb4cd77d7f6@testnet-seeds.whispernode.com:25756" && \
+sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.initia/config/config.toml
+```
+### 🚧Gas pruning ayarı
+```
+...
+```
+
 ### 🚧Snap
 ```
 ...
